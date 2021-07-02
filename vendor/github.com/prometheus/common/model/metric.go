@@ -94,7 +94,7 @@ func IsValidMetricName(n LabelValue) bool {
 		return false
 	}
 	for i, b := range n {
-		if !((b >= 'a' && b <= 'z') || (b >= 'A' && b <= 'Z') || b == '_' || b == ':' || (b >= '0' && b <= '9' && i > 0)) {
+		if !((b >= 'a' && b <= 'z') || (b >= 'A' && b <= 'Z') || b == '_' || b == ':' || b == '.' || (b >= '0' && b <= '9' && i > 0)) {
 			return false
 		}
 	}

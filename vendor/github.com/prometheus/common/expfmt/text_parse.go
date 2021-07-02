@@ -712,7 +712,7 @@ func (p *TextParser) setOrCreateCurrentMF() {
 }
 
 func isValidLabelNameStart(b byte) bool {
-	return (b >= 'a' && b <= 'z') || (b >= 'A' && b <= 'Z') || b == '_'
+	return (b >= 'a' && b <= 'z') || (b >= 'A' && b <= 'Z') || b == '_' || b == '.'
 }
 
 func isValidLabelNameContinuation(b byte) bool {
@@ -724,7 +724,7 @@ func isValidMetricNameStart(b byte) bool {
 }
 
 func isValidMetricNameContinuation(b byte) bool {
-	return isValidLabelNameContinuation(b) || b == ':'
+	return isValidLabelNameContinuation(b) || b == ':' || b == '.'
 }
 
 func isBlankOrTab(b byte) bool {
